@@ -1,0 +1,157 @@
+{
+  "$schema": "https://raw.githubusercontent.com/vicinaehq/vicinae/refs/heads/main/extra/schemas/extension.json",
+  "name": "claude-quick-ai",
+  "title": "Claude Quick AI",
+  "description": "Ask Claude from the root search, with streaming answers, follow-ups and chat history. Works through the Anthropic API or the Claude Code CLI (subscription).",
+  "icon": "icon.png",
+  "author": "zxsleebu",
+  "license": "MIT",
+  "categories": [
+    "Productivity",
+    "Developer Tools"
+  ],
+  "keywords": [
+    "ai",
+    "claude",
+    "anthropic",
+    "chat",
+    "llm"
+  ],
+  "commands": [
+    {
+      "name": "ask-claude",
+      "title": "Ask Claude",
+      "subtitle": "Claude",
+      "description": "Ask Claude a question and get a streaming answer. Can be used as a fallback command.",
+      "mode": "view",
+      "icon": "icon.png",
+      "keywords": [
+        "ask",
+        "ai",
+        "quick"
+      ],
+      "arguments": [
+        {
+          "name": "question",
+          "type": "text",
+          "placeholder": "Question",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "chat-history",
+      "title": "Claude Chat History",
+      "subtitle": "Claude",
+      "description": "Browse, continue and delete previous conversations with Claude.",
+      "mode": "view",
+      "icon": "icon.png",
+      "keywords": [
+        "history",
+        "conversations"
+      ]
+    }
+  ],
+  "preferences": [
+    {
+      "name": "backend",
+      "title": "Backend",
+      "description": "Where requests go: the Anthropic Messages API, or the local Claude Code CLI (uses your Claude subscription, no API key needed).",
+      "type": "dropdown",
+      "required": true,
+      "default": "cli",
+      "data": [
+        {
+          "title": "Claude Code CLI (subscription)",
+          "value": "cli"
+        },
+        {
+          "title": "Anthropic API",
+          "value": "api"
+        }
+      ]
+    },
+    {
+      "name": "model",
+      "title": "Model",
+      "description": "Model used by both backends.",
+      "type": "dropdown",
+      "required": true,
+      "default": "claude-sonnet-5",
+      "data": [
+        {
+          "title": "Claude Sonnet 5",
+          "value": "claude-sonnet-5"
+        },
+        {
+          "title": "Claude Opus 5.5",
+          "value": "claude-opus-5-5"
+        },
+        {
+          "title": "Claude Haiku 4.5",
+          "value": "claude-haiku-4-5-20251001"
+        }
+      ]
+    },
+    {
+      "name": "customModel",
+      "title": "Custom Model",
+      "description": "Optional model id that overrides the dropdown (e.g. a model name exposed by your proxy).",
+      "type": "textfield",
+      "required": false
+    },
+    {
+      "name": "systemPrompt",
+      "title": "System Prompt",
+      "description": "Optional system prompt.",
+      "type": "textfield",
+      "required": false
+    },
+    {
+      "name": "apiKey",
+      "title": "API Key",
+      "description": "Anthropic API key (API backend only). Leave empty for a local proxy that needs no auth.",
+      "type": "password",
+      "required": false
+    },
+    {
+      "name": "baseUrl",
+      "title": "Base URL",
+      "description": "API backend only. Change it to point at a local proxy such as CLIProxyAPI (e.g. http://127.0.0.1:8317).",
+      "type": "textfield",
+      "required": false,
+      "default": "https://api.anthropic.com"
+    },
+    {
+      "name": "maxTokens",
+      "title": "Max Tokens",
+      "description": "API backend only: max_tokens for each answer.",
+      "type": "textfield",
+      "required": false,
+      "default": "4096"
+    },
+    {
+      "name": "claudePath",
+      "title": "Claude Binary",
+      "description": "CLI backend only: path to the claude binary. Empty means search PATH and ~/.local/bin.",
+      "type": "textfield",
+      "required": false
+    }
+  ],
+  "scripts": {
+    "build": "vici build",
+    "dev": "vici develop",
+    "lint": "vici lint",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test ./test"
+  },
+  "dependencies": {
+    "@vicinae/api": "^0.29.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.0",
+    "@types/react": "^19.3.0",
+    "typescript": "^5.9.3"
+  },
+  "repository": "https://github.com/zxsleebu/vicinae-claude"
+}
