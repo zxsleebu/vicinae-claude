@@ -56,6 +56,12 @@ npm run build
 
 To use it as a fallback, open **Manage Fallback Commands** in Vicinae and enable **Ask Claude**.
 
+### Faster ways in
+
+- **Tab from an empty launcher.** Put **Ask Claude** first in your favorites. Vicinae selects it as soon as the window opens, so <kbd>Tab</kbd> jumps into the question field. Type, press <kbd>Enter</kbd>. This needs compact mode off, since compact mode hides the list until you type.
+- **Alias + Space.** Set an alias such as `ai` on Ask Claude (Actions → Set Alias). Then `ai` <kbd>Space</kbd> jumps to the question field. Keywords alone don't do this, only an exact alias match does.
+- **Global hotkey.** Give Ask Claude a hotkey in Vicinae's extension settings to open the chat from anywhere.
+
 ## Settings
 
 Open them from any action panel with **Open Extension Preferences**.
