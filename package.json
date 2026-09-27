@@ -136,6 +136,15 @@
       "description": "CLI backend only: path to the claude binary. Empty means search PATH and ~/.local/bin.",
       "type": "textfield",
       "required": false
+    },
+    {
+      "name": "clearArgument",
+      "title": "Clear Question Field",
+      "label": "Clear the launcher question field after asking",
+      "description": "Vicinae keeps text typed into the question field and shows it again next time. When on, the extension briefly resets the launcher (the window blinks) so the field starts empty.",
+      "type": "checkbox",
+      "required": false,
+      "default": true
     }
   ],
   "scripts": {

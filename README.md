@@ -60,6 +60,7 @@ To use it as a fallback, open **Manage Fallback Commands** in Vicinae and enable
 
 - **Tab from an empty launcher.** Put **Ask Claude** first in your favorites. Vicinae selects it as soon as the window opens, so <kbd>Tab</kbd> jumps into the question field. Type, press <kbd>Enter</kbd>. This needs compact mode off, since compact mode hides the list until you type.
 - **Alias + Space.** Set an alias such as `ai` on Ask Claude (Actions → Set Alias). Then `ai` <kbd>Space</kbd> jumps to the question field. Keywords alone don't do this, only an exact alias match does.
+- Vicinae normally keeps whatever you typed into the question field and shows it again next time. The extension works around that: after you press <kbd>Enter</kbd> it resets the launcher and reopens the chat, so the window blinks once and the field starts empty. Turn off **Clear Question Field** in the settings if you'd rather keep the text.
 - **Global hotkey.** Give Ask Claude a hotkey in Vicinae's extension settings to open the chat from anywhere.
 
 ## Settings
@@ -76,6 +77,7 @@ Open them from any action panel with **Open Extension Preferences**.
 | Base URL | `https://api.anthropic.com` | Point it at a proxy, e.g. `http://127.0.0.1:8317`. With or without `/v1` |
 | Max Tokens | `4096` | API backend |
 | Claude Binary | | Empty means search `PATH`, `~/.local/bin`, `~/.claude/local` and a few more |
+| Clear Question Field | on | Empty the launcher's question field after asking (the window blinks once) |
 
 ## Shortcuts
 

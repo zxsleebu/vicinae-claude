@@ -29,6 +29,7 @@ export interface Preferences {
   baseUrl?: string;
   maxTokens?: string;
   claudePath?: string;
+  clearArgument?: boolean;
 }
 
 export interface StreamOptions {
